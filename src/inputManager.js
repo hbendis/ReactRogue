@@ -1,4 +1,4 @@
-class inputManager {
+class InputManager {
     observer = [];
 
     subscribe(fn){
@@ -29,5 +29,12 @@ class inputManager {
                  break;
         }
     };
-    
+    bindKeys() {
+        document.addEventListener('keydown', this.handleKeys);
+    }
+    unbindKeys(){
+        document.removeEventListener('keydown', this.handleKeys);
+    }
 }
+
+export default InputManager;
